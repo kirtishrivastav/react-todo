@@ -16,7 +16,7 @@ function Inputs(Props) {
     //axios post req function
     const handleSubmit = (e) => {
       e.preventDefault();
-      axios.post("/", { input: input })
+      axios.post("input/", { input: input })
         .then((response) => {
           console.log(response);
         })

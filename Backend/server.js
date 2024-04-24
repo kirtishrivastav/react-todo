@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const { create } = require('node-persist');
 
 const app = express();
-const PORT = 3000;
+const port = 3000;
 
 // Initialize node-persist
 (async () => {
@@ -14,7 +14,7 @@ const PORT = 3000;
     app.use(bodyParser.json());
 
     // POST route for /inputText
-    app.post('/', async (req, res) => {
+    app.post('input/', async (req, res) => {
       try {
         const input = req.body.input;
         if (!input) {
@@ -30,8 +30,8 @@ const PORT = 3000;
     });
         
     // Start server
-    app.listen(PORT, () => {
-      console.log(`Server is running on http://localhost:${PORT}`);
+    app.listen(port, () => {
+      console.log(`Server is running on http://localhost:${port}`);
     });
   } catch (err) {
     console.error('Error initializing store:', err);
