@@ -14,7 +14,7 @@ const port = 3000;
     app.use(bodyParser.json());
 
     // POST route for /inputText
-    app.post('input/', async (req, res) => {
+    app.post('/input', async (req, res) => {
       try {
         const input = req.body.input;
         if (!input) {
